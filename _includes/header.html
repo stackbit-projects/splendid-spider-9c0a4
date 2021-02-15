@@ -1,0 +1,20 @@
+<header class="masthead">
+  {% if site.author.avatar %}
+    <a href="{{ '/' | relative_url }}" title="Home">
+      <img src="{{ site.author.avatar | relative_url }}" alt="Avatar" class="avatar">
+    </a>
+  {% endif %}
+  <a class="masthead-title" href="{{ '/' | relative_url }}" title="Home">{{ site.title }}</a>
+  <small class="masthead-tagline">{{ site.tagline }}</small>
+  {% if site.data.navigation %}
+    <nav class="nav">
+      <ul class="nav-list">
+      {%- for item in site.data.navigation -%}
+        <li class="nav-item">
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+      {%- endfor -%}
+      </ul>
+    </nav>
+  {% endif %}
+</header>
